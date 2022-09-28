@@ -78,10 +78,6 @@
 						<span><%out.print(product.isOnline());%></span>
 					</div>
 					<div class="myColumn">
-						<span style="font-weight: bold">Qtd</span> 
-						<span>00</span>
-					</div>
-					<div class="myColumn">
 						<input id="myItemButton" type="submit" name="addCar"
 							value="addCar">
 					</div>
