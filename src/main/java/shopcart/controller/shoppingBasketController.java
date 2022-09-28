@@ -48,6 +48,7 @@ public class shoppingBasketController extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		HttpSession session = request.getSession();
 		String addCar = request.getParameter("addCar");
+		String delItem = request.getParameter("delItem");
 		UserStore user = (UserStore)session.getAttribute("userlogin");
 		String idProduct = request.getParameter("id");
 		
@@ -55,30 +56,18 @@ public class shoppingBasketController extends HttpServlet {
 				&&(user !=null && user.getIdUser() !=null)
 				&& (idProduct !=null && !idProduct.isEmpty())){
 			Product product = new Product().seacherById(Integer.parseInt(idProduct));
-//			Item item = new Item();
-//			item.setProduct(product);
-//			var itemSalved = item.saveItem(item, 1);
-//			ShoppingBasket shpBk = new ShoppingBasket();
-//			var basket = shpBk.addItem(itemSalved, user);
+			Item item = new Item();
+			item.setProduct(product);
+			var itemSalved = item.saveItem(item, 1);
+			ShoppingBasket shpBk = new ShoppingBasket();
+			var basket = shpBk.addItem(itemSalved, user);
 			
-			Item testItem = new Item();
-			testItem.setAmount(1);
-			testItem.setIdItem(2);
-			testItem.setProduct(product);
-			ShoppingBasket sh = new ShoppingBasket();
-			sh.setDataCreated("28/09/2022");
-			sh.setIdBasket(22);
-			sh.setActive(true);
-			sh.setUser(user);
-			List<Item> its = new ArrayList<>();
-			its.add(testItem);
-			sh.setList(its);
-			session.setAttribute("shoppingBasket", sh);
-			
-//			session.setAttribute("shoppingBasket", basket);
+			session.setAttribute("shoppingBasket", basket);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("shoppingBasket.jsp");
 			request.setAttribute("message", "Product add in shopping basket");
 			dispatcher.forward(request, response);
+		} else if(delItem != null && delItem.isEmpty()){
+			
 		}else {
 			
 			RequestDispatcher dispatcher = request.getRequestDispatcher("shopProduct.jsp");

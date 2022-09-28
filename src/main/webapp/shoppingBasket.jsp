@@ -56,7 +56,7 @@
 			List<?> items = (List<?>)shopBasket.getList() ;
 			for (int contador = 0; contador <= (items.size() - 1); contador++) {
 				Item itemBasket = ( Item)items.get(contador);%>
-		<form action="changeproduct" method="post">
+		<form action="basket" method="post">
 			<div class="myDivMother">
 				<div class="myDivItem">
 					<div class="myColumn">
@@ -83,7 +83,7 @@
 					</div>
 					<div class="myColumn">
 						<input id="myItemButton"
-							type="submit" name="delete" value="Delete">
+							type="submit" name="delItem" value="Delete">
 					</div>
 				</div>
 			</div>
