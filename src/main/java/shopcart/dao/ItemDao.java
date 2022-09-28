@@ -73,7 +73,7 @@ public class ItemDao {
 				
 				item.setIdItem(rs.getInt("idItem"));
 				item.setAmount(rs.getInt("amount"));
-				Integer idProduto = rs.getInt("amount");
+				Integer idProduto = rs.getInt("idProduct");
 			    Product  product = new ProductDao().seacherById(idProduto);
 				item.setProduct(product);
 			}

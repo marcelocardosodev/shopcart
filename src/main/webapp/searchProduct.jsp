@@ -24,6 +24,7 @@
 			<li><img src="img/bacana.png" height="20px"></li>
 			<li><a href="registerProduct.jsp">Register Product</a></li>
 			<li><a href="searchProduct.jsp">Search Product</a></li>
+			<li><a href="shoppingBasket.jsp">Shopping Basket</a></li>
 			<li><a href="login.jsp">Log off</a></li>
 			<li><span style="color: yellow">User: <%out.print(user.getName());%></span></li>
 			<li><span style="color: yellow">Balance<%out.print(user.getBalance());%></span></li>
