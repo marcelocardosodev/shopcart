@@ -50,7 +50,6 @@
 				<select style="width: 400px;background-color: #F1AE2B;
 				padding: 10px;border: 1px solid gray;border-radius: 8px;" 
 				id="appearance-select" name="category">
-    				<option value=""><%out.print(product.getCategory());%></option>
     				<option value="ACCESSORIES">ACCESSORIES</option>
     				<option value="CLOTHES">CLOTHES</option>
     				<option value="FOOTWEAR">FOOTWEAR</option>

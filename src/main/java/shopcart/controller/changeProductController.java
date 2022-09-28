@@ -71,7 +71,7 @@ public class changeProductController extends HttpServlet {
 			Product productReceived = new Product();
 			productReceived.setIdProduct(Integer.parseInt(id));
 			productReceived.setDescription(description);
-			productReceived.setCategory(Category.valueOf(category));
+			productReceived.setCategory(category!=null?Category.valueOf(category):null);
 			productReceived.setAmount(Integer.parseInt(amount));
 			productReceived.setPrice(Double.valueOf(price));
 			productReceived.setOnline(on);
